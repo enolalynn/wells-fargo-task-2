@@ -1,20 +1,20 @@
 package com.wellsfargo.counselor.entity;
 
-
 import jakarta.persistence.*;
-import jdk.jfr.DataAmount;
 import lombok.*;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Advisor {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long advisorId;
+    private Long clientId;
+
+    @ManyToOne
+    private Advisor advisor;
 
     @Column(nullable = false)
     private String firstName;
@@ -30,4 +30,5 @@ public class Advisor {
 
     @Column
     private String email;
+
 }
