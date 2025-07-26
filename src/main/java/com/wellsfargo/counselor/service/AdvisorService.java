@@ -5,6 +5,7 @@ import com.wellsfargo.counselor.repository.AdvisorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdvisorService {
@@ -22,4 +23,11 @@ public class AdvisorService {
         return advisorRepository.save(advisor);
     }
 
+    public Optional<Advisor> getAdvisorById(Long id) {
+        return advisorRepository.findById(id);
+    }
+
+    public void deleteAdvisor(Long id) {
+        advisorRepository.deleteById(id);
+    }
 }

@@ -22,13 +22,13 @@ public class Client {
     @Column(nullable = false)
     private String lastName;
 
-    @Column
+    @Column(nullable = false)
     private String address;
 
-    @Column
+    @Column(nullable = false)
     private String phone;
 
-    @Column
+    @Column(nullable = false)
     private String email;
 
 }

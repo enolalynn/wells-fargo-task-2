@@ -16,6 +16,10 @@ public class Security{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long securityId;
 
+    @ManyToOne
+    @JoinColumn(name = "portfolio_id",nullable = false)
+    private Portfolio portfolio;
+
     @Column(nullable = false)
     private String name;
 
@@ -28,7 +32,7 @@ public class Security{
     @Column(nullable = false)
     private LocalDate purchaseDate;
 
-    @ManyToOne
-    @JoinColumn(name="portfolioId", nullable = false)
-    private Portfolio portfolio;
+    @Column(nullable = false)
+    private int quantity;
+
 }
